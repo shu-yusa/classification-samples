@@ -18,18 +18,9 @@ def generate(min_x, max_x, min_y, max_y, num_samples, overlap_width=0.5):
         samples = np.append(samples, np.array([[x, y]]), axis=0)
         if abs(boundary(x, y)) < overlap_width:
             labels = np.append(labels, 1 if random.random() >= 0.5 else 0)
-            pass
         else:
             labels = np.append(labels, 1 if boundary(x, y) > 0 else 0)
     return samples, labels
-
-def generate_normal_samle(mu1, var1, mu2, var2, num_samples):
-    std1 = np.sqrt(var1)
-    std2 = np.sqrt(var2)
-    samples = np.empty((0, 2), float)
-    a = np.random.normal(mu1, var1, size=[num_samples/2, 2])
-    b = np.random.normal(mu2, var2, size=[num_samples/2, 2])
-    return np.r_[a, b], np.r_[np.ones(num_samples/2), np.zeros(num_samples/2)]
 
 
 def show_figure(samples, labels, num_samples, clf):
