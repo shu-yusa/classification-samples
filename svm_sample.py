@@ -7,7 +7,7 @@ from sklearn import svm
 
 def boundary(x, y):
     #return - 0.5 * x**3 + x**2
-    return y + x
+    return y + 0.5*x*x
 
 def generate(min_x, max_x, min_y, max_y, num_samples, overlap_width=0.5):
     samples = np.empty((0, 2), float)
@@ -50,16 +50,9 @@ def show_figure(samples, labels, num_samples, clf):
 
 
 if __name__ == '__main__':
-    # data points
-    X = [[0, 0], [1, 1]]
-    # labels
-    y = [0, 1]
-
     num_samples = 1000
     # generate samples
-    samples, labels = generate(-10, 10, -10, 10, num_samples)
-
-    print(generate(2.5, 4, -2.5, 4, num_samples))
+    samples, labels = generate(-10, 10, -10, 10, num_samples, 3)
 
     # Create a model for SVM
     """
@@ -68,7 +61,7 @@ if __name__ == '__main__':
     poly ... Polynomial kernel
     sigmoid ... Sigmoid kernel
     """
-    clf = svm.SVC(C=2., kernel='rbf')
+    clf = svm.SVC(C=2., kernel='rbf', gamma=0.01)
 
     # learning
     clf.fit(samples, labels)
