@@ -1,5 +1,5 @@
-# Support Vector Machine
-Learning Support Vector Machine using `scikit-learn`.
+# Classification samples
+Learning machine learning algorithms using `scikit-learn`.
 
 ## Requirements
 * python3.6.1
@@ -18,14 +18,16 @@ pip install -r requirements.txt
 ```
 
 ## Execute
-Execute SVM sample by
+Execute script
 ```bash
-python svm_sample.py
+python classify.py
 ```
 
-![figure.png](https://raw.githubusercontent.com/shu-yusa/support-vector-machine/master/figure.png)
+![SVM.png](https://raw.githubusercontent.com/shu-yusa/support-vector-machine/master/SVM.png)  
+![LinearDiscriminant.png](https://raw.githubusercontent.com/shu-yusa/support-vector-machine/master/LinearDiscriminant.png)  
+![QuadraticDiscriminant.png](https://raw.githubusercontent.com/shu-yusa/support-vector-machine/master/QuadraticDiscriminant.png)
 
 
 ## Reference
-[1.4. Support Vector Machines — scikit-learn 0.19.0 documentation](http://scikit-learn.org/stable/modules/svm.html#svm)
+[1.4. Support Vector Machines — scikit-learn 0.19.0 documentation](http://scikit-learn.org/stable/modules/svm.html#svm)  
 [sklearn.svm.SVC — scikit-learn 0.19.0 documentation](http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
